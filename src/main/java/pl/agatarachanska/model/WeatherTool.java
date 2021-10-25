@@ -20,8 +20,8 @@ public class WeatherTool {
     private static final String TIME_FORMAT = "HH:mm:ss";
     private static final String TIME_WEATHER = "06:00:00";
     private static final Integer NEXT_DAY = 8;
-    private final String language;
-    private final ResourceBundle resourceBundle;
+    private String language;
+    private ResourceBundle resourceBundle;
     public String temp;
     public String sym;
     public String descript;
@@ -55,6 +55,9 @@ public class WeatherTool {
     private String dayDayDayAfterDescription;
     private boolean connectionIsOpen;
     private boolean unexpectError = false;
+
+    public WeatherTool() {
+    }
 
     public WeatherTool(String city, ResourceBundle resourceBundle) {
         this.city = city;
@@ -388,5 +391,149 @@ public class WeatherTool {
 
     public boolean getUnexpectError() {
         return unexpectError;
+    }
+
+    public InputStream getLocal() {
+        return local;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public void setResourceBundle(ResourceBundle resourceBundle) {
+        this.resourceBundle = resourceBundle;
+    }
+
+    public void setTemp(String temp) {
+        this.temp = temp;
+    }
+
+    public void setSym(String sym) {
+        this.sym = sym;
+    }
+
+    public void setDescript(String descript) {
+        this.descript = descript;
+    }
+
+    public void setPress(String press) {
+        this.press = press;
+    }
+
+    public void setClock(Date clock) {
+        this.clock = clock;
+    }
+
+    public void setForecast(List<String> forecast) {
+        this.forecast = forecast;
+    }
+
+    public void setForecasts(List<Forecast> forecasts) {
+        this.forecasts = forecasts;
+    }
+
+    public void setLocal(InputStream local) {
+        this.local = local;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+    public void setTemperature(String temperature) {
+        this.temperature = temperature;
+    }
+
+    public void setPressure(String pressure) {
+        this.pressure = pressure;
+    }
+
+    public void setTempToday(String tempToday) {
+        this.tempToday = tempToday;
+    }
+
+    public void setPressureToday(String pressureToday) {
+        this.pressureToday = pressureToday;
+    }
+
+    public void setDescriptionToday(String descriptionToday) {
+        this.descriptionToday = descriptionToday;
+    }
+
+    public void setTodayDay(String todayDay) {
+        this.todayDay = todayDay;
+    }
+
+    public void setTomorrow(String tomorrow) {
+        this.tomorrow = tomorrow;
+    }
+
+    public void setDayAfter(String dayAfter) {
+        this.dayAfter = dayAfter;
+    }
+
+    public void setDayDayAfter(String dayDayAfter) {
+        this.dayDayAfter = dayDayAfter;
+    }
+
+    public void setDayDayDayAfter(String dayDayDayAfter) {
+        this.dayDayDayAfter = dayDayDayAfter;
+    }
+
+    public void setIcon0(String icon0) {
+        this.icon0 = icon0;
+    }
+
+    public void setIconA(String iconA) {
+        this.iconA = iconA;
+    }
+
+    public void setIconB(String iconB) {
+        this.iconB = iconB;
+    }
+
+    public void setIconC(String iconC) {
+        this.iconC = iconC;
+    }
+
+    public void setIconD(String iconD) {
+        this.iconD = iconD;
+    }
+
+    public void setTomorrowDescription(String tomorrowDescription) {
+        this.tomorrowDescription = tomorrowDescription;
+    }
+
+    public void setDayAfterDescription(String dayAfterDescription) {
+        this.dayAfterDescription = dayAfterDescription;
+    }
+
+    public void setDayDayAfterDescription(String dayDayAfterDescription) {
+        this.dayDayAfterDescription = dayDayAfterDescription;
+    }
+
+    public void setDayDayDayAfterDescription(String dayDayDayAfterDescription) {
+        this.dayDayDayAfterDescription = dayDayDayAfterDescription;
+    }
+
+    public void setConnectionIsOpen(boolean connectionIsOpen) {
+        this.connectionIsOpen = connectionIsOpen;
+    }
+
+    public void setUnexpectError(boolean unexpectError) {
+        this.unexpectError = unexpectError;
     }
 }

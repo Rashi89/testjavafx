@@ -30,6 +30,7 @@ public class Weather implements Initializable {
     private WeatherManager weatherManager;
     private WeatherTool weatherTool;
     private Date datas;
+    private String mainData;
 
     @FXML
     private AnchorPane window;
@@ -75,7 +76,7 @@ public class Weather implements Initializable {
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL url,ResourceBundle resourceBundle) {
         this.resourceBundle = resourceBundle;
         setMainData(resourceBundle);
         weatherManager = new WeatherManager(citySet, resourceBundle);
@@ -83,7 +84,6 @@ public class Weather implements Initializable {
         weatherTool.fetchLocalApi();
         if (!weatherTool.getUnexpectError()) {
             if (weatherTool.getConnectionIsOpen()) {
-
                 showWeatherAndForecastInMyRegion();
                 if (weatherTool.getUnexpectError()) {
                     showInfo(resourceBundle.getString("unexpectError"));
@@ -112,6 +112,7 @@ public class Weather implements Initializable {
     private void setMainData(ResourceBundle resourceBundle) {
         String name = new SimpleDateFormat("EEE", Locale.ENGLISH).format(new Date());
         String nameDay = setDayNames(name, resourceBundle);
+        this.mainData = nameDay;
         day.setText(nameDay);
     }
 
@@ -325,5 +326,9 @@ public class Weather implements Initializable {
         img8.setImage(new Image(ImagesTool.getImage(weatherTool.getIconC())));
         img9.setImage(new Image(ImagesTool.getImage(weatherTool.getIconD())));
         window.setStyle("-fx-background-image: url(" + ImagesTool.getBackground(weatherTool.getIcon0()) + ");");
+    }
+
+    public String getMainData() {
+        return mainData;
     }
 }
